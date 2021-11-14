@@ -1,0 +1,6 @@
+State,Capital,Year Founded
+Oregon,Salem,1855
+Utah,Salt Lake City,1858
+Oklahoma,Oklahoma City,1910
+Nebraska,Lincoln,1867
+Florida,Tallahassee,1824

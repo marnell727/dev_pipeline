@@ -1,0 +1,22 @@
+select person_id, first_name || ' ' || last_name as full_name, email, phone, city, state
+from People
+where active = 1;
+
+select course_id, name, description
+from Courses
+where active = 1;
+
+select cohort_id, first_name || ' ' || last_name as instructor_name, start_date, end_date
+from Cohort c left outer join People p
+on c.instructor_id = p.person_id
+where active = 1;
+
+select cr.student_id, p.first_name || ' ' || p.last_name as full_name, c.cohort_id, cs.name, cr.registration_date, cr.completion_date, cr.drop_date
+from Student_Cohort_Registration cr
+left outer join People p
+on cr.student_id = p.person_id
+left outer join Cohort c
+on cr.cohort_id = c.cohort_id
+left outer join Courses cs
+on cs.course_id = c.course_id
+where cr.active = 1;
