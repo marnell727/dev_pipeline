@@ -1,0 +1,39 @@
+CREATE TABLE IF NOT EXISTS People (
+    person_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    address_city TEXT NOT NULL,
+    address_state TEXT NOT NULL,
+    phone_number TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Birthdays (
+    birth_date_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id int NOT NULL,
+    place_of_birth TEXT,
+    year_of_birth TEXT NOT NULL,
+    month_of_birth TEXT NOT NULL,
+    FOREIGN KEY (person_id) REFERENCES People (person_id)
+);
+
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Michael', 'Arnell', 'Lehi', 'Utah', '8675309');
+INSERT INTO Birthdays (person_id, place_of_birth, year_of_birth, month_of_birth) VALUES (1, 'Mars', 2306, 3);
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Harry', 'Potter', 'London', 'England', '8675309');
+INSERT INTO Birthdays (person_id, place_of_birth, year_of_birth, month_of_birth) VALUES (2, 'UK', 1990, 7);
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Hermione', 'Granger', 'Sydney', 'Australia', '8675309');
+INSERT INTO Birthdays (person_id, place_of_birth, year_of_birth, month_of_birth) VALUES (3, 'UK', 1990, 3);
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Ronald', 'Weasley', 'Bucharest', 'Romania', '8675309');
+INSERT INTO Birthdays (person_id, place_of_birth, year_of_birth, month_of_birth) VALUES (4, 'UK', 1990, 6);
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Frodo', 'Baggins', 'Hobbiton', 'Shire', '8675309');
+INSERT INTO Birthdays (person_id, place_of_birth, year_of_birth, month_of_birth) VALUES (5, 'Bag End', 15, 5);
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Samwise', 'Gamgee', 'Hobbiton', 'Shire', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Peregrin', 'Took', 'Hobbiton', 'Shire', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Meriadoc', 'Brandybuck', 'Hobbiton', 'Shire', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Bilbo', 'Baggins', 'Hobbiton', 'Shire', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Gandalf', 'Grey', 'Wild', 'Wilderness', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Luke', 'Skywalker', 'Desert', 'Tatooine', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Anakin', 'Skywalker', 'Death Star', 'Empire', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Han', 'Solo', 'Falcon', 'Space', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('George', 'Washington', 'Mount Vernon', 'Virginia', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Thomas', 'Jefferson', 'Monticello', 'Virginia', '8675309');
+INSERT INTO People (first_name, last_name, address_city, address_state, phone_number) VALUES ('Alexander', 'Hamilton', 'New York', 'New York', '8675309');
