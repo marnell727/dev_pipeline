@@ -46,7 +46,9 @@ VALUES (?,?,?,?,?,?,?)'
         
 
 def initialize_db(cursor):
-    query = '''CREATE TABLE IF NOT EXISTS Users (
+    query = '''DROP TABLE Users;
+    
+    CREATE TABLE IF NOT EXISTS Users (
     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name TEXT NOT NULL,
     last_name TEXT,
@@ -56,7 +58,7 @@ def initialize_db(cursor):
     password TEXT NOT NULL,
     date_created TEXT
 );'''
-    cursor.execute(query)
+    cursor.executescript(query)
 
 initialize_db(cursor)
 
@@ -69,4 +71,4 @@ user.save_user(cursor)
 
 user.load_user(cursor,(1,))
 
-print(user.first_name)
+user.display_user()
